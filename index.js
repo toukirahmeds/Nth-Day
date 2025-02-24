@@ -1,9 +1,15 @@
-const calculateNthDay = require("./calculateNthDay");
+const processCmdLineArgs = require("./processCmdLineArgs");
+
+const cmdLineArgs = process.argv.slice(2, 4);
 
 const main = async () => {
-    const result = calculateNthDay("2000-01-01", "2000-01-31");
+    let result;
 
-    console.log(result);
+    if (cmdLineArgs.length > 0) {
+        result = processCmdLineArgs(cmdLineArgs);
+    }
+
+    console.log(`Output: ${result}`);
 };
 
 main();

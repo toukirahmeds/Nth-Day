@@ -4,8 +4,6 @@ const calculateNthDay = (oldDateStr, newDateStr) => {
     const oldDate = new Date(oldDateStr);
     const newDate = newDateStr ? new Date(newDateStr) : new Date();
 
-    console.log(newDate)
-
     if (isNaN(oldDate.getTime()) || isNaN(newDate.getTime())) {
         printManualAndExit();
     }
