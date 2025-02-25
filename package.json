@@ -8,6 +8,10 @@
     "start": "node index.js",
     "dev": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toukirahmeds/Nth-Day"
+  },
   "keywords": [
     "n-th",
     "day",
