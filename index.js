@@ -3,8 +3,12 @@ const processConsoleInput = require("./processConsoleInput");
 const { printManualAndExit } = require("./helpers");
 const { HELP_ARG } = require("./constants");
 
+// Fetch only the 1st and 2nd arguments.
 const cmdLineArgs = process.argv.slice(2, 4);
 
+/**
+ * Starts the application.
+ */
 const main = async () => {
     let result;
 

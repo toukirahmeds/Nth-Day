@@ -1,5 +1,5 @@
 # Nth-Day
-Calculate the n-th day from a specific date.
+Calculate the n-th day starting from a specific date.
 
 ## How to run
 - [Install Node.js and NPM](https://nodejs.org/en/download) (If not installed.)

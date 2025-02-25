@@ -3,6 +3,12 @@ const ONE_MINUTE = ONE_SECOND * 60;
 const ONE_HOUR = ONE_MINUTE * 60;
 const ONE_DAY = ONE_HOUR * 24;
 
+const FIRST_ORD_NUM_SUFFIX = {
+    "1": "st",
+    "2": "nd",
+    "3": "rd"
+};
+
 const HELP_ARG = "--help";
 
 const START_DATE_ARG_TITLE = "--startDate=";
@@ -28,6 +34,7 @@ For Help Manual:
 
 module.exports = {
     ONE_DAY,
+    FIRST_ORD_NUM_SUFFIX,
     HELP_ARG,
     START_DATE_ARG_TITLE,
     END_DATE_ARG_TITLE,

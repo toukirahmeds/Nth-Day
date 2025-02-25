@@ -2,7 +2,16 @@ const calculateNthDay = require("./calculateNthDay");
 const { printManualAndExit } = require("./helpers");
 const { START_DATE_ARG_TITLE, END_DATE_ARG_TITLE } = require("./constants");
 
-const processCmdLineArgs = (cmdLineArgs) => {
+/**
+ * Process the calculation from command-line arguments.
+ * 
+ * @param {Array<string>} cmdLineArgs 
+ * @returns {{
+ *      nthDay: number,
+ *      statement: string
+ * }}
+ */
+const processCmdLineArgs = cmdLineArgs => {
     const startDateArg = cmdLineArgs.find(item => item.startsWith(START_DATE_ARG_TITLE));
 
     if (!startDateArg) {

@@ -4,6 +4,16 @@ const {
     printManualAndExit
 } = require("./helpers");
 
+/**
+ * Calculates the nth day starting from a specific date.
+ * 
+ * @param {string} startDateStr 
+ * @param {string} endDateStr 
+ * @returns {{
+ *      nthDay: number,
+ *      statement: string
+ * }}
+ */
 const calculateNthDay = (startDateStr, endDateStr) => {
     const startDate = new Date(startDateStr);
     const endDate = endDateStr ? new Date(endDateStr) : new Date();
@@ -24,7 +34,7 @@ const calculateNthDay = (startDateStr, endDateStr) => {
         process.exit();
     }
 
-    const totalDaysInDecimal = calculateDaysInDecimal(endDate, startDate);
+    const totalDaysInDecimal = calculateDaysInDecimal(startDate, endDate);
     const nthDay = Math.ceil(totalDaysInDecimal);
 
     return {
