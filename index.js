@@ -12,7 +12,7 @@ const main = async () => {
         result = await processConsoleInput();
     }
 
-    console.log(`Output: ${result}`);
+    console.log(`Output: ${result.statement}`);
 };
 
 main();

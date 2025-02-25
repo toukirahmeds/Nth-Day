@@ -1,5 +1,6 @@
 const readline = require("readline").promises;
 const calculateNthDay = require("./calculateNthDay");
+const { getDateInDashFormat } = require("./helpers");
 
 const { DATE_INPUT_FORMAT_TEXT } = require("./constants");
 
@@ -7,12 +8,7 @@ const PROMPT_FROM_DATE = `
 Provide the start date (Required): `;
 
 const dateToday = new Date();
-const year = dateToday.getFullYear();
-const month = dateToday.getMonth() + 1;
-const date = dateToday.getDate();
-const dateTodayStr = `${year}-${month}-${date}`;
-
-const PROMPT_TO_DATE = `Provide the end date (Default: ${dateTodayStr}): `;
+const PROMPT_TO_DATE = `Provide the end date (Default: ${getDateInDashFormat(dateToday)}): `;
 
 const getRLInterface = () => readline.createInterface(
     process.stdin,

@@ -1,4 +1,8 @@
-const { calculateDaysInDecimal, printManualAndExit } = require("./helpers");
+const {
+    calculateDaysInDecimal,
+    getOutputStatement,
+    printManualAndExit
+} = require("./helpers");
 
 const calculateNthDay = (startDateStr, endDateStr) => {
     const startDate = new Date(startDateStr);
@@ -21,8 +25,12 @@ const calculateNthDay = (startDateStr, endDateStr) => {
     }
 
     const totalDaysInDecimal = calculateDaysInDecimal(endDate, startDate);
+    const nthDay = Math.ceil(totalDaysInDecimal);
 
-    return Math.ceil(totalDaysInDecimal);
+    return {
+        nthDay,
+        statement: getOutputStatement(nthDay, startDate)
+    };
 };
 
 module.exports = calculateNthDay;
