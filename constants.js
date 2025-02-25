@@ -11,7 +11,7 @@ const END_DATE_ARG_TITLE = "--endDate=";
 const DATE_INPUT_FORMAT_TEXT = "Input Date Format: YYYY-MM-DD";
 
 const MANUAL_TEXT = `Description:
-    Find the n-th day starting from a specific date.
+    Calculate the n-th day starting from a specific date.
 
 ${DATE_INPUT_FORMAT_TEXT}
 
