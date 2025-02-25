@@ -1,21 +1,22 @@
-const { printManualAndExit } = require("./helpers");
 const calculateNthDay = require("./calculateNthDay");
+const { printManualAndExit } = require("./helpers");
+const { START_DATE_ARG_TITLE, END_DATE_ARG_TITLE } = require("./constants");
 
 const processCmdLineArgs = (cmdLineArgs) => {
-    const oldDateArg = cmdLineArgs.find(item => item.startsWith("--oldDate="));
+    const startDateArg = cmdLineArgs.find(item => item.startsWith(START_DATE_ARG_TITLE));
 
-    if (!oldDateArg) {
+    if (!startDateArg) {
         printManualAndExit();
     }
 
-    const oldDateStr = oldDateArg.replace("--oldDate=", "");
+    const startDateStr = startDateArg.replace(START_DATE_ARG_TITLE, "");
 
-    const newDateArg = cmdLineArgs.find(item => item.startsWith("--newDate="));
-    const newDateStr = newDateArg
-        ? newDateArg.replace("--newDate=", "")
+    const endDateArg = cmdLineArgs.find(item => item.startsWith(END_DATE_ARG_TITLE));
+    const endDateStr = endDateArg
+        ? endDateArg.replace(END_DATE_ARG_TITLE, "")
         : undefined;
 
-    return calculateNthDay(oldDateStr, newDateStr);
+    return calculateNthDay(startDateStr, endDateStr);
 };
 
 module.exports = processCmdLineArgs;

@@ -1,7 +1,7 @@
 const { MANUAL_TEXT, ONE_DAY } = require("./constants");
 
-const calculateDaysInDecimal = (newDate, oldDate) => {
-    const timeDiff = newDate.getTime() - oldDate.getTime();
+const calculateDaysInDecimal = (endDate, startDate) => {
+    const timeDiff = endDate.getTime() - startDate.getTime();
     
     return timeDiff / ONE_DAY;
 };

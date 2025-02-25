@@ -1,26 +1,26 @@
 const { calculateDaysInDecimal, printManualAndExit } = require("./helpers");
 
-const calculateNthDay = (oldDateStr, newDateStr) => {
-    const oldDate = new Date(oldDateStr);
-    const newDate = newDateStr ? new Date(newDateStr) : new Date();
+const calculateNthDay = (startDateStr, endDateStr) => {
+    const startDate = new Date(startDateStr);
+    const endDate = endDateStr ? new Date(endDateStr) : new Date();
 
-    if (isNaN(oldDate.getTime()) || isNaN(newDate.getTime())) {
+    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
         printManualAndExit();
     }
 
-    oldDate.setHours(0);
+    startDate.setHours(0);
 
-    // Setting hours to 2, to make sure it is larger than oldDate
+    // Setting hours to 2, to make sure it is larger than startDate
     // and the number of days is in decimal value to get higher
     // ceiling value.
-    newDate.setHours(2);
+    endDate.setHours(2);
 
-    if (oldDate > newDate) {
-        console.error("Old date cannot be more than new date.");
+    if (startDate > endDate) {
+        console.error("Start date cannot be more than new date.");
         process.exit();
     }
 
-    const totalDaysInDecimal = calculateDaysInDecimal(newDate, oldDate);
+    const totalDaysInDecimal = calculateDaysInDecimal(endDate, startDate);
 
     return Math.ceil(totalDaysInDecimal);
 };
